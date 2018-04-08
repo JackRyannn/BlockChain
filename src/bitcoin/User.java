@@ -2,12 +2,12 @@ package bitcoin;
 import java.util.ArrayList;
 
 public class User implements UserInterface{
-    int id;
+    String id;
     int flag = 0;
     int money = 100;
     public static ArrayList<User> userList = new ArrayList<User>();
 
-    public User(int id) {
+    public User(String id) {
         this.id = id;
         userList.add(this);
     }
@@ -15,7 +15,7 @@ public class User implements UserInterface{
 
 
     @Override
-    public String transfer(int id, int delta) {
+    public String transfer(String id, int delta) {
         if(delta<=0){
             return "金额必须大于0元";
         }
@@ -30,20 +30,20 @@ public class User implements UserInterface{
             }
         }
 
-        return "账户id："+this.id+"转账给用户id:"+id+ "  "+delta +"块钱";
+        return "账户："+this.id+"转账给用户id:"+id+ "  "+delta +"块钱";
     }
 
-    public static User getById(int id){
+    public static User getById(String id){
         for(User user : userList){
-            if(user.id == id)
+            if(user.id.equals(id))
                 return user;
         }
         return null;
     }
 
     @Override
-    public void getMessage(int fid, int tid, int delta) {
-        if(this.id == tid)
+    public void getMessage(String fid, String tid, int delta) {
+        if(this.id.equals(tid))
         this.money += delta;
     }
 
@@ -53,7 +53,7 @@ public class User implements UserInterface{
             boolean b = true;
             if(u.flag == 0)
                 b = false;
-            s += ("账户id:"+u.id+"     账户余额："+u.money+"     是否为矿工:"+(b?"是":"否")+"<br>");
+            s += ("账户: "+u.id+"     账户余额："+u.money+"     是否为矿工:"+(b?"是":"否")+"<br>");
         }
         return s;
     }

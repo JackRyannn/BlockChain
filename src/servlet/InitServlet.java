@@ -30,10 +30,10 @@ public class InitServlet extends HttpServlet {
         initBlock.setPrevHash("0");
         initBlock.setHash(initBlock.calculateHash());
         Block.arrayList.add(initBlock);
-        User initUser = new User(1);
-        User initUser2 = new User(2);
-        Worker worker3 = new Worker(3);
-        Worker worker4 = new Worker(4);
+        new User("1");
+        new User("2");
+        new Worker("3");
+        new Worker("4");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

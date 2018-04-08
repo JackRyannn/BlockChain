@@ -7,14 +7,14 @@ import java.util.Random;
 public class Worker extends User implements Runnable{
 
     Block block;
-    public Worker(int id) {
+    public Worker(String id) {
         super(id);
         flag = 1;
     }
 
     @Override
-    public void getMessage(int fid,int tid,int delta) {
-        if(this.id == tid)
+    public void getMessage(String fid,String tid,int delta) {
+        if(this.id.equals(tid))
             this.money += delta;
         this.block = Block.generate(Block.arrayList.get(Block.arrayList.size()-1),"用户"+fid+"转账给用户"+tid+" "+delta+"块钱");
     }

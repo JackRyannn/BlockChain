@@ -23,8 +23,8 @@ public class TransferServlet extends HttpServlet {
         // 设置响应内容类型
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
-        int fid = Integer.parseInt(request.getParameter("fid"));
-        int tid = Integer.parseInt(request.getParameter("tid"));
+        String fid = request.getParameter("fid");
+        String tid = request.getParameter("tid");
         int delta = Integer.parseInt(request.getParameter("money"));
         User user = User.getById(fid);
         String ret = user.transfer(tid,delta);

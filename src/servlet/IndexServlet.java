@@ -24,7 +24,7 @@ public class IndexServlet extends javax.servlet.http.HttpServlet {
                       HttpServletResponse response)
             throws ServletException, IOException
     {
-        int s = Integer.parseInt(request.getParameter("account"));
+        String s = request.getParameter("account");
         // 设置响应内容类型
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");

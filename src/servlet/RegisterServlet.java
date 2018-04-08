@@ -20,12 +20,12 @@ public class RegisterServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int fid = Integer.parseInt(request.getParameter("fid"));
+        String fid = request.getParameter("fid");
         int flag = Integer.parseInt(request.getParameter("flag"));
         if(flag ==0){
-            User user = new User(fid);
+            new User(fid);
         }else{
-            Worker worker = new Worker(fid);
+            new Worker(fid);
         }
         request.getRequestDispatcher("/panel.jsp?id=" + fid).forward(request, response);
 
