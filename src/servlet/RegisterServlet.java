@@ -22,10 +22,15 @@ public class RegisterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String fid = request.getParameter("fid");
         int flag = Integer.parseInt(request.getParameter("flag"));
-        if(flag ==0){
+        if(flag == 0){
             new User(fid);
-        }else{
+        }else if(flag == 1){
             new Worker(fid);
+        }else if(flag == 2){
+            User.common_flag = true;
+        }else if(flag == 3){
+            User.common_flag = false;
+
         }
         request.getRequestDispatcher("/panel.jsp?id=" + fid).forward(request, response);
 

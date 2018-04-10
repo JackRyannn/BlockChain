@@ -49,6 +49,14 @@
         <servlet-name>BlockServlet</servlet-name>
         <url-pattern>/blockServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>CommonServlet</servlet-name>
+        <servlet-class>servlet.CommonServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CommonServlet</servlet-name>
+        <url-pattern>/commonServlet</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>

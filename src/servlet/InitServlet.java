@@ -1,5 +1,9 @@
 package servlet;
 
+import bitcoin.Block;
+import bitcoin.User;
+import bitcoin.Worker;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,9 +13,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Logger;
-import bitcoin.Block;
-import bitcoin.User;
-import bitcoin.Worker;
 
 /**
  * Created by jackryannn on 18/3/29.
@@ -34,6 +35,8 @@ public class InitServlet extends HttpServlet {
         new User("2");
         new Worker("3");
         new Worker("4");
+        new User("hacker");
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

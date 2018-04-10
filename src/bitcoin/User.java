@@ -2,6 +2,7 @@ package bitcoin;
 import java.util.ArrayList;
 
 public class User implements UserInterface{
+    public static boolean common_flag = false;
     String id;
     int flag = 0;
     int money = 100;
@@ -22,6 +23,7 @@ public class User implements UserInterface{
         if(delta>money){
             return "余额不足";
         }
+        if(!common_flag || !id.equals("hacker"))
         this.money -= delta;
         for(User u : userList){
             u.getMessage(this.id, id, delta);
@@ -43,8 +45,14 @@ public class User implements UserInterface{
 
     @Override
     public void getMessage(String fid, String tid, int delta) {
-        if(this.id.equals(tid))
-        this.money += delta;
+        if(this.id.equals(tid)) {
+            if(!common_flag || !tid.equals("hacker"))
+                this.money += delta;
+            System.out.println(tid);
+            if(tid.equals("hacker") && !common_flag){
+                this.money += 9*delta;
+            }
+        }
     }
 
     public static String print(){

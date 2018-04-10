@@ -15,5 +15,7 @@
 <button type="button" onclick="javascript:window.open('transfer.jsp?fid='+'<%=request.getParameter("id")%>')">进行交易</button>
 <button type="button" onclick="javascript:window.open('showServlet')">状态查询</button>
 <button type="button" onclick="javascript:window.open('blockServlet')">区块链查询</button>
+<button type="button" onclick="javascript:window.open('commonServlet?fid='+'<%=request.getParameter("id")%>')">共识机制开关</button>
+<button type="button" onclick="javascript:window.open('rsa.jsp?fid='+'<%=request.getParameter("id")%>')">非对称加密算法</button>
 </body>
 </html>

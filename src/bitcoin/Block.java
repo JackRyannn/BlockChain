@@ -1,10 +1,9 @@
 package bitcoin;
+import org.apache.commons.codec.digest.DigestUtils;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.logging.Logger;
-
-import org.apache.commons.codec.digest.DigestUtils;
 /**
  * Created by jackryannn on 18/3/26.
  */
@@ -38,7 +37,13 @@ public class Block {
 
     public static boolean verifyLastBlock(Block block){
         synchronized (arrayList){
+            int count = 0;
+            for(User u : User.userList){
+                count += u.money;
+            }
             if(arrayList.get(arrayList.size()-1).index+1 == block.index){
+                if(User.common_flag && count != 100*User.userList.size()+arrayList.size()-1)
+                    return false;
                 return true;
             }
         }
