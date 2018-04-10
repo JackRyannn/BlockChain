@@ -30,6 +30,7 @@ public class InitServlet extends HttpServlet {
         initBlock.setInfo("该块为创世块，无交易信息");
         initBlock.setPrevHash("0");
         initBlock.setHash(initBlock.calculateHash());
+        System.out.println("123");
         Block.arrayList.add(initBlock);
         new User("1");
         new User("2");

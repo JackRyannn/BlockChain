@@ -10,9 +10,11 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Spring-4.3.14.RELEASE" />
           <element id="library" level="project" name="Java EE 6-Java EE 6" />
-          <element id="library" level="project" name="apache-codec:commons-codec:1.2" />
         </element>
+        <element id="file-copy" path="$PROJECT_DIR$/src/rsa/commons-codec-1.11.jar" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/rsa/commons-io-2.6.jar" />
       </element>
+      <element id="module-output" name="BlockChain" />
     </root>
   </artifact>
 </component>

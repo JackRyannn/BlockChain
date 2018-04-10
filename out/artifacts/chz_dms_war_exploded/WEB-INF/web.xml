@@ -58,5 +58,13 @@
         <url-pattern>/commonServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>RsaServlet</servlet-name>
+        <servlet-class>servlet.RsaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RsaServlet</servlet-name>
+        <url-pattern>/rsaServlet</url-pattern>
+    </servlet-mapping>
 
 </web-app>
