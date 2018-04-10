@@ -9,7 +9,6 @@ public class User implements UserInterface{
     public static ArrayList<User> userList = new ArrayList<User>();
 
     public User(String id) {
-        System.out.println(id);
         this.id = id;
         userList.add(this);
     }

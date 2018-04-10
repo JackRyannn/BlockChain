@@ -1,7 +1,6 @@
 package bitcoin;
 import org.apache.commons.codec.digest.DigestUtils;
 
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,9 +31,7 @@ public class Block {
     }
     public String calculateHash(){
         String s = this.index+timestamp+info+prevHash;
-        System.out.println(s);
-        s = DigestUtils.md5Hex(s);
-        System.out.println(s);
+        s = DigestUtils.shaHex(s);
         return s;
     }
 
