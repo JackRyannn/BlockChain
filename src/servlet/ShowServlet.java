@@ -14,15 +14,14 @@ import java.io.PrintWriter;
 @WebServlet(name = "ShowServlet")
 public class ShowServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 设置响应内容类型
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         // 实际的逻辑是在这里
         PrintWriter out = response.getWriter();
-        out.println("<h1>"+bitcoin.User.print() + "</h1>");
+        out.println("<h1 text-align:center>"+"状态查询"+ "</h1>");
+        out.println(bitcoin.User.print());
     }
 }

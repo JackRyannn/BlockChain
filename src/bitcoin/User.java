@@ -56,13 +56,26 @@ public class User implements UserInterface{
     }
 
     public static String print(){
-        String s = "当前账户个数："+userList.size()+"<br>";
+        String s = "<head>\n" +
+                "    <title></title>\n" +
+                "  <style>\n" +
+                "    table {\n" +
+                "      width:100%;\n" +
+                "      margin:15px 0;\n" +
+                "      border:0;\n" +
+                "      padding: 70px 0;\n" +
+                "      text-align: center;\n" +
+                "    }\n" +
+                "  </style>\n" +
+                "</head>" +
+                "<table border='1'><tr><td>当前账户个数</td><td>"+userList.size()+"</td></tr>";
         for(User u : userList){
             boolean b = true;
             if(u.flag == 0)
                 b = false;
-            s += ("账户: "+u.id+"     账户余额："+u.money+"     是否为矿工:"+(b?"是":"否")+"<br>");
+            s += ("<tr><td>账户</td><td>"+u.id+"</td><td>账户余额</td><td>"+u.money+"</td><td>是否为矿工</td><td>"+(b?"是":"否")+"</td></tr>");
         }
+        s+="</table>";
         return s;
     }
 

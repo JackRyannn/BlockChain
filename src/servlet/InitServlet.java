@@ -31,11 +31,11 @@ public class InitServlet extends HttpServlet {
         initBlock.setPrevHash("0");
         initBlock.setHash(initBlock.calculateHash());
         Block.arrayList.add(initBlock);
-        new User("1");
-        new User("2");
-        new Worker("3");
-        new Worker("4");
-        new User("hacker");
+        new User("ZhangSan");
+        new User("LiSi");
+        new Worker("WangWu");
+        new Worker("ZhaoLiu");
+        new User("ChenQi");
 
     }
 

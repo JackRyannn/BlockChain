@@ -51,10 +51,23 @@ public class Block {
     }
 
     public static String print(){
-        String s = "";
+        String s = "<head>\n" +
+                "    <title></title>\n" +
+                "  <style>\n" +
+                "    table {\n" +
+                "      width:100%;\n" +
+                "      margin:15px 0;\n" +
+                "      border:0;\n" +
+                "      padding: 70px 0;\n" +
+                "      text-align: center;\n" +
+                "    }\n" +
+                "  </style>\n" +
+                "</head>" +
+                "<table border='1'>";
         for(Block b : arrayList){
-            s += ("区块编号:"+b.index+" 时间戳："+b.timestamp+" 交易信息："+b.info+" Hash值："+b.hash)+"<br>";
+            s += ("<tr><td>区块编号</td><td>"+b.index+"</td>时间戳<td>"+b.timestamp+"</td>交易信息<td>"+b.info+"</td><td>Hash值</td><td>"+b.hash)+"</td></tr>";
         }
+        s+="</table>";
         return s;
     }
 
